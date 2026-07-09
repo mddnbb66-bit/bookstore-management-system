@@ -92,8 +92,8 @@ watch(
 
       <div class="nav-actions">
         <template v-if="!isAdmin && auth.isLoggedIn">
-          <span class="welcome-text">{{ textMap.welcome }}{{ welcomeText }}</span>
           <BaseButton v-if="auth.isAdmin" @click="goAdmin">{{ textMap.enterAdmin }}</BaseButton>
+          <span class="welcome-text">{{ textMap.welcome }}{{ welcomeText }}</span>
           <BaseButton variant="secondary" @click="logout">{{ textMap.logout }}</BaseButton>
         </template>
 
