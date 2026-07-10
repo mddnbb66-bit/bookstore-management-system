@@ -37,7 +37,7 @@ CREATE TABLE books (
   summary TEXT NULL COMMENT 'summary',
   price DECIMAL(10,2) NOT NULL COMMENT 'price',
   discount DECIMAL(4,2) NOT NULL DEFAULT 1.00 COMMENT 'discount',
-  stock INT NOT NULL DEFAULT 0 COMMENT 'stock',
+  stock INT NOT NULL DEFAULT 100 COMMENT 'stock',
   cover_url VARCHAR(255) NULL COMMENT 'cover url',
   status TINYINT NOT NULL DEFAULT 1 COMMENT 'status',
   CONSTRAINT fk_books_category FOREIGN KEY (category_id) REFERENCES book_categories(category_id)
