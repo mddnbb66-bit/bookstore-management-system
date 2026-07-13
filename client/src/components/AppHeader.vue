@@ -23,7 +23,8 @@ const textMap = {
   logout: '\u9000\u51fa\u767b\u5f55',
   login: '\u767b\u5f55',
   register: '\u6ce8\u518c',
-  admin: '\u540e\u53f0\u767b\u5f55'
+  admin: '\u540e\u53f0\u767b\u5f55',
+  enterAdmin: '\u8fdb\u5165\u540e\u53f0'
 };
 
 const isAdmin = computed(() => route.path.startsWith('/admin'));
@@ -87,6 +88,7 @@ watch(
 
       <div class="nav-actions">
         <template v-if="!isAdmin && auth.isLoggedIn">
+          <router-link v-if="auth.isAdmin" to="/admin"><BaseButton>{{ textMap.enterAdmin }}</BaseButton></router-link>
           <span class="welcome-text">{{ textMap.welcome }}{{ welcomeText }}</span>
           <BaseButton variant="secondary" @click="logout">{{ textMap.logout }}</BaseButton>
         </template>

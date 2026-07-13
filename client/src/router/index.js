@@ -20,6 +20,7 @@ const routes = [
   { path: '/admin/books', component: () => import('../views/AdminBooksView.vue'), meta: { requiresAdmin: true } },
   { path: '/admin/users', component: () => import('../views/AdminUsersView.vue'), meta: { requiresAdmin: true } },
   { path: '/admin/orders', component: () => import('../views/AdminOrdersView.vue'), meta: { requiresAdmin: true } },
+  { path: '/admin/orders/:id', component: () => import('../views/AdminOrderDetailView.vue'), meta: { requiresAdmin: true } },
   { path: '/admin/stats', component: () => import('../views/AdminStatsView.vue'), meta: { requiresAdmin: true } },
   { path: '/admin/profile', component: () => import('../views/AdminProfileView.vue'), meta: { requiresAdmin: true } }
 ];

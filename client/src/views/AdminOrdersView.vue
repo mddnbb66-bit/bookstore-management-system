@@ -1,5 +1,6 @@
 <script setup>
 import { onMounted, reactive, ref } from 'vue';
+import { RouterLink } from 'vue-router';
 import AdminShell from '../components/AdminShell.vue';
 import BaseButton from '../components/BaseButton.vue';
 import StatusBadge from '../components/StatusBadge.vue';
@@ -132,6 +133,7 @@ onMounted(loadData);
             <td><StatusBadge :text="item.status" :tone="toneMap[item.status]" /></td>
             <td>{{ item.order_date }}</td>
             <td>
+              <RouterLink :to="`/admin/orders/${item.order_id}`" class="text-link">查看详情</RouterLink>
               <BaseButton
                 v-if="item.status === '待发货'"
                 variant="secondary"
